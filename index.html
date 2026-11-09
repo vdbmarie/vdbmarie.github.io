@@ -165,6 +165,13 @@
   line-height: 1.5;
 }
 
+    .job-title {
+  display: inline-block;
+  color: var(--heading);
+  font-size: 1.2rem;
+  font-weight: 600;
+  margin-bottom: 4px;
+}
 
     footer {
       border-top: 1px solid var(--border);
@@ -220,9 +227,11 @@
       <div class="intro-text">
         <h1>Marie Van Den Bogaard</h1>
         <p class="subtitle">
-          Associate Professor in Computer Science<br>
-          Université Gustave Eiffel · LIGM
-        </p>
+  <span class="job-title">
+    Associate Professor in Computer Science
+  </span><br>
+  Université Gustave Eiffel · LIGM
+</p>
 
       
 <div class="intro-text">
@@ -236,7 +245,7 @@
 
   <p>
     My research lies at the intersection of formal methods
-    and algorithmic game theory. I am interested in different
+    and game theory. I am interested in different
     notions of rational behaviour in multiplayer games,
     and in the algorithmic questions arising from these notions,
     particularly in infinite-duration games on graphs.
