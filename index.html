@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -5,53 +6,277 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Marie Van Den Bogaard</title>
   <style>
-    body {
-      font-family: system-ui, sans-serif;
-      max-width: 800px;
-      margin: 60px auto;
-      padding: 0 24px;
-      line-height: 1.7;
-      color: #30343b;
+    :root {
+      --background: #FAF9F6;
+      --accent-background: #E8F0F5;
+      --heading: #2F2A85;
+      --text: #0F273B;
+      --link: #007A5C;
+      --border: #D4DFE6;
     }
-    h1, h2 { line-height: 1.3; }
-    h1 { margin-bottom: 0.3em; }
-    h2 { margin-top: 2em; }
-    a { color: #346b80; }
-    a:hover { color: #193d4c; }
-    .subtitle { color: #666; }
+
+    * { box-sizing: border-box; }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      margin: 0;
+      background: var(--background);
+      color: var(--text);
+      font-family: system-ui, -apple-system, sans-serif;
+      font-size: 16px;
+      line-height: 1.7;
+    }
+
+    .container {
+      max-width: 960px;
+      margin: 0 auto;
+      padding: 0 32px;
+    }
+
+    a {
+      color: var(--link);
+      text-decoration-thickness: 1px;
+      text-underline-offset: 3px;
+    }
+
+    a:hover { text-decoration-thickness: 2px; }
+
+    h1, h2 {
+      color: var(--heading);
+      line-height: 1.25;
+    }
+
+    h1 {
+      font-size: clamp(2rem, 5vw, 2.8rem);
+      margin: 0 0 12px;
+    }
+
+    h2 {
+      font-size: 1.5rem;
+      margin: 0 0 24px;
+    }
+
+    .site-header {
+      border-bottom: 1px solid var(--border);
+    }
+
+    .navigation {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 24px;
+      padding-top: 22px;
+      padding-bottom: 22px;
+    }
+
+    .site-name {
+      font-weight: 650;
+      color: var(--heading);
+      text-decoration: none;
+    }
+
+    nav {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 20px;
+    }
+
+    nav a {
+      font-size: 0.9rem;
+      text-decoration: none;
+    }
+
+    .intro {
+      display: flex;
+      align-items: center;
+      gap: 48px;
+      padding-top: 76px;
+      padding-bottom: 72px;
+    }
+
+    .intro-text { flex: 1; }
+
+    .subtitle {
+      font-size: 1.1rem;
+      margin: 0 0 24px;
+    }
+
+    .intro p { max-width: 620px; }
+
+    .photo-placeholder {
+      width: 190px;
+      height: 230px;
+      flex-shrink: 0;
+      background: var(--accent-background);
+      border-radius: 12px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      color: var(--heading);
+      font-size: 0.9rem;
+    }
+
+    section {
+      padding: 42px 0;
+      border-top: 1px solid var(--border);
+      scroll-margin-top: 24px;
+    }
+
+    .highlight {
+      background: var(--accent-background);
+      padding: 20px 24px;
+      border-radius: 10px;
+      margin-top: 24px;
+    }
+
+    .publication-list {
+      padding-left: 22px;
+    }
+
+    .publication-list li {
+      margin-bottom: 18px;
+      padding-left: 4px;
+    }
+
+    .publication-title {
+      font-weight: 600;
+    }
+
+    footer {
+      border-top: 1px solid var(--border);
+      padding: 30px 0 48px;
+      margin-top: 40px;
+      font-size: 0.85rem;
+    }
+
+    @media (max-width: 650px) {
+      .container { padding: 0 20px; }
+
+      .navigation {
+        align-items: flex-start;
+        flex-direction: column;
+        gap: 12px;
+      }
+
+      nav { gap: 12px 18px; }
+
+      .intro {
+        flex-direction: column-reverse;
+        align-items: flex-start;
+        gap: 28px;
+        padding-top: 40px;
+        padding-bottom: 40px;
+      }
+
+      .photo-placeholder {
+        width: 140px;
+        height: 170px;
+      }
+
+      section { padding: 32px 0; }
+    }
   </style>
 </head>
+
 <body>
-  <header>
-    <h1>Marie Van Den Bogaard</h1>
-    <p class="subtitle">
-      Associate Professor in Computer Science<br>
-      Université Gustave Eiffel · LIGM
-    </p>
+  <header class="site-header">
+    <div class="container navigation">
+      <a class="site-name" href="#">Marie Van Den Bogaard</a>
+      <nav aria-label="Main navigation">
+        <a href="#research">Research</a>
+        <a href="#publications">Publications</a>
+        <a href="#teaching">Teaching</a>
+        <a href="#activities">Activities</a>
+        <a href="#contact">Contact</a>
+      </nav>
+    </div>
   </header>
 
-  <main>
-    <h2>About me</h2>
-    <p>
-      I am an Associate Professor in Computer Science
-      at Université Gustave Eiffel, affiliated with LIGM.
-      My research focuses on game theory and formal methods.
-    </p>
+  <main class="container">
+    <div class="intro">
+      <div class="intro-text">
+        <h1>Marie Van Den Bogaard</h1>
+        <p class="subtitle">
+          Associate Professor in Computer Science<br>
+          Université Gustave Eiffel · LIGM
+        </p>
 
-    <h2>Research interests</h2>
-    <p>
-      Games on graphs, equilibria, formal verification,
-      and quantitative objectives.
-    </p>
+        <p>
+          I work in formal methods and game theory,
+          with a particular interest in equilibria
+          in multiplayer games and quantitative objectives.
+        </p>
 
-    <h2>Publications</h2>
-    <p>Coming soon.</p>
+        <p>
+          I am currently on research leave at
+          the Laboratoire Méthodes Formelles (LMF),
+          Université Paris-Saclay, for the academic
+          year 2026–2027.
+        </p>
+      </div>
 
-    <h2>Teaching</h2>
-    <p>Coming soon.</p>
+      <div class="photo-placeholder">Photo</div>
+    </div>
 
-    <h2>Contact</h2>
-    <p>Université Gustave Eiffel · LIGM</p>
+    <section id="research">
+      <h2>Research</h2>
+      <p>
+        My research focuses on formal methods and
+        algorithmic game theory, especially games
+        on graphs, rational behaviour, and
+        quantitative objectives.
+      </p>
+      <div class="highlight">
+        More information about current research
+        projects and collaborations will appear here.
+      </div>
+    </section>
+
+    <section id="publications">
+      <h2>Selected publications</h2>
+      <ol class="publication-list">
+        <li>
+          <span class="publication-title">
+            The Complexity of Subgame-perfect Equilibria
+            in Parity and Mean-payoff Games
+          </span><br>
+          Journal of the ACM.
+          <a href="https://doi.org/10.1145/3838725">DOI</a>
+        </li>
+      </ol>
+      <p>More publications coming soon.</p>
+    </section>
+
+    <section id="teaching">
+      <h2>Teaching</h2>
+      <p>
+        I teach computer science at Université Gustave Eiffel,
+        including programming and algorithms.
+      </p>
+    </section>
+
+    <section id="activities">
+      <h2>Academic activities</h2>
+      <p>
+        I am co-chair of the GT-DAAL working group
+        of the French research network GDR IFM.
+      </p>
+    </section>
+
+    <section id="contact">
+      <h2>Contact</h2>
+      <p>
+        Université Gustave Eiffel · LIGM<br>
+        Laboratoire Méthodes Formelles (2026–2027)
+      </p>
+    </section>
   </main>
+
+  <footer>
+    <div class="container">
+      Marie Van Den Bogaard · Last updated November 2026
+    </div>
+  </footer>
 </body>
 </html>
