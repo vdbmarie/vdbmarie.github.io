@@ -58,8 +58,12 @@
     }
 
     .site-header {
-      border-bottom: 1px solid var(--border);
-    }
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  background: var(--background);
+  border-bottom: 1px solid var(--border);
+}
 
     .navigation {
       display: flex;
@@ -116,7 +120,7 @@
     section {
       padding: 42px 0;
       border-top: 1px solid var(--border);
-      scroll-margin-top: 24px;
+      scroll-margin-top: 90px;
     }
 
     .highlight {
